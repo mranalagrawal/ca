@@ -3,9 +3,9 @@ stages:
 
 eslint:
   stage: lint
-  image: node:18
+  image: node:18.19.1
   script:
-    - yarn install --ignore-engines
+    - yarn install --production=false
     - yarn run lint || exit 1
   only:
     - merge_requests
